@@ -1,0 +1,8 @@
+source 'https://rubygems.org'
+
+gem 'rake'
+
+gem 'bubble-wrap', '~> 1.9.6'
+gem "bubble-wrap-http"
+
+# Add your dependencies here:
