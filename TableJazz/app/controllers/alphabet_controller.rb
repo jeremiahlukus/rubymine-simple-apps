@@ -14,13 +14,13 @@ class AlphabetController < UIViewController
     #    "C" => ["Carlos", "Charlie"],
     #    "D" => ["Darlos", "Dharlie"]
     #}
-    @data = {}
+    $data = {}
     ("A".."Z").to_a.each do |letter|
-      @data[letter] = []
+      $data[letter] = []
       5.times do
         # Via http://stackoverflow.com/a/88341/910451
         random_string = (0...4).map{65.+(rand(25)).chr}.join
-        @data[letter] << letter + random_string
+        $data[letter] << letter + random_string
       end
     end
     puts "hey"
@@ -80,11 +80,11 @@ class AlphabetController < UIViewController
   end
 
   def sections
-    @data.keys.sort
+    $data.keys.sort
   end
 
   def rows_for_section(section_index)
-    @data[self.sections[section_index]]
+    $data[self.sections[section_index]]
   end
 
   def row_for_index_path(index_path)
